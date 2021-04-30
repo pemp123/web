@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+  {% include "exitPattern.html" %}
+{% else %}
+  {% include "startPattern.html" %}
+{% endif %}
+<div id="content">
+{% block content %}
+  {% endblock %}
+  </div>
+  <div>
+    <em> © Apple Inc., 2021 г. Все права защищены.</em> 
+  </div>  
+  </body>
+</html>

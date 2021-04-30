@@ -1,0 +1,78 @@
+{% extends "fullPattern.html" %}
+<div id="content">
+  {% block content %}
+  <div class="game_switcher">
+     <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Тетрис">	
+      </form>
+      <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Змейка">	
+      </form>
+      <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="2048">	
+      </form>
+      <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Dino jumps">	
+      </form>
+      <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Пинг-понг">	
+      </form>
+      <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Гонки">	
+      </form>
+  </div>
+  <br><br><br><br><br>
+  <div class="wrapper">
+    <div class="table">
+        <div class="main-row">
+            <div class="col c1"><div class="main-cell-text">Место</div></div>
+            <div class="col c2"><div class="main-cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="main-cell-text">Баллы</div></div>
+            <div class="col c4"><div class="main-cell-text">Время</div></div>
+        </div>
+        <div class="row">
+            <div class="col c1"><div class="cell-text">Место</div></div>
+            <div class="col c2"><div class="cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="cell-text">Баллы</div></div>
+            <div class="col c4"><div class="cell-text">Время</div></div>
+        </div>
+        <div class="row">
+            <div class="col c1"><div class="cell-text">Место</div></div>
+            <div class="col c2"><div class="cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="cell-text">Баллы</div></div>
+            <div class="col c4"><div class="cell-text">Время</div></div>
+        </div>
+        <div class="row">
+            <div class="col c1"><div class="cell-text">Место</div></div>
+            <div class="col c2"><div class="cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="cell-text">Баллы</div></div>
+            <div class="col c4"><div class="cell-text">Время</div></div>
+        </div>
+        <div class="row">
+            <div class="col c1"><div class="cell-text">Место</div></div>
+            <div class="col c2"><div class="cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="cell-text">Баллы</div></div>
+            <div class="col c4"><div class="cell-text">Время</div></div>
+        </div>
+        <div class="row">
+            <div class="col c1"><div class="cell-text">Место</div></div>
+            <div class="col c2"><div class="cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="cell-text">Баллы</div></div>
+            <div class="col c4"><div class="cell-text">Время</div></div>
+        </div>
+        <div class="row">
+            <div class="col c1"><div class="cell-text">Место</div></div>
+            <div class="col c2"><div class="cell-text">Имя пользователя</div></div>
+            <div class="col c3"><div class="cell-text">Баллы</div></div>
+            <div class="col c4"><div class="cell-text">Время</div></div>
+        </div>
+    </div>   
+   </div>
+{% endblock %}
+</div>

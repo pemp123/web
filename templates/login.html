@@ -1,0 +1,42 @@
+{% extends "fullPattern.html" %}
+<div id="content">
+    {% block content %}
+  <div class="font-size">
+    <div class="container">
+        <form class="registration" action="" method="POST">
+          {% csrf_token %}
+          {{ form.LoginForm}}
+          <h1>Вход</h1>
+          <label for="{{ form.username.id_for_label}}" >
+            
+            <span >Имя пользователя</span>
+            
+            <div class="tst1" >
+              {{ form.username_l}}
+            <!-- <input type="text" id="username" minlength="3" placeholder=" " required> -->
+            </div>
+      
+          </label>
+
+          <label for="{{ form.password.id_for_label}}">
+            <span>Пароль</span>
+            <div class="tst1">
+              {{ form.password_l}}
+            <!-- <input type="password" id="password1" 
+                maxlength="100" minlength="8" placeholder=" " required> -->
+            </div>
+          </label>
+
+          <br>
+          <div class="registration_text">Нет учетной записи?
+            <a class="reg_link" href="./register.html">Создать учетную запись</a>
+          </div>
+          <br>
+
+          <input type="submit">	
+
+        </form>
+      </div>
+  </div>
+        {% endblock %}
+</div>

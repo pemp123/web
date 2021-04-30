@@ -1,0 +1,105 @@
+ {% extends "fullPattern.html" %}
+ {% load static %}
+  <div id="content">
+    {% block content %}
+    <br><br><br><br><br><br><br>
+  <div id="banner" class="banner">
+    <div class="slideshow-container">
+
+  <a class="mySlides fade" href="page-tetris">
+    
+    <img src="{% static "images/tetris.jpg"%}"  class="sliderImages">
+    <div class="text">Тетрис</div>
+  </a>
+
+  <a class="mySlides fade" href="page-snake">
+    
+    <img src="{% static "images/snake.png"%}" class="sliderImages">
+    <div class="text">Змейка</div>
+  </a>
+
+  <a class="mySlides fade" href="page-2048">
+    
+    <img src="{% static "images/2048.png"%}" class="sliderImages">
+    <div class="text">2048</div>
+  </a>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+  </div>
+  <div class="games_box">
+    <div class="games_table">
+        <div class="up-row">
+          <a href="page-tetris" class="g1">
+              <div class="up-cell-text">
+                <img src="{% static "images/tetris.jpg"%}" width=100% height=100%>
+                <div class="t1"><div class="down-cell-text">Тетрис</div></div>
+              </div>
+          </a>
+            <a href="page-snake" class="g2">
+              <div class="up-cell-text">
+                <img src="{% static "images/snake.png"%}" width=100% height=100%>
+                <div class="t2"><div class="down-cell-text">Змейка</div></div>
+              </div>       
+            </a>
+            <a href="page-2048" class="g3">
+              <div class="up-cell-text">
+                <img src="{% static "images/2048.png"%}" width=100% height=100%>
+                <div class="t3"><div class="down-cell-text">2048</div></div>
+              </div>
+            </a>
+            <a href="page-dinojumps" class="g4">
+              <div class="up-cell-text">
+                <img src="{% static "images/dino-main.jpg"%}" width=100% height=100%>
+                
+                <div class="t4"><div class="down-cell-text">Dino jumps</div></div>
+              </div>
+            </a>
+            <a href="page-pingpong" class="g5">
+              <div class="up-cell-text">
+                <img src="{% static "images/pingpong.jpg"%}" width=100% height=100%>
+                <div class="t5"><div class="down-cell-text">Пинг-понг</div></div>
+              </div>
+            </a>
+            <a href="page-racing" class="g6">
+              <div class="up-cell-text">
+                <img src="{% static "images/tetris.jpg"%}" width=100% height=100%>
+                <div class="t6"><div class="down-cell-text">Гонки</div></div>
+              </div>
+            </a>
+            <a href="page-shooter" class="g7">
+              <div class="up-cell-text">
+                <img src="{% static "images/tetris.jpg"%}" width=100% height=100%>
+                <div class="t7"><div class="down-cell-text">Стрелялка</div></div>
+                </div>
+            </a>
+        </div>
+
+    </div>   
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <script src="{% static 'scripts/sliderScript.js' %}"></script>
+  {% endblock %}
+  </div>
+

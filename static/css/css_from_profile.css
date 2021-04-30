@@ -1,0 +1,72 @@
+#tab
+{
+  width:50%;
+  display:inline-block;
+}
+
+#last_tab
+{
+  width:49.8%;
+  display:inline-block;
+  margin-right: -8px;
+}
+
+.profile_information{
+  margin-left:10%;
+  margin-right:0%
+}
+
+.one_line{
+  width:100%;
+  height:100%;
+  overflow: auto;
+}
+
+.one_line > input {
+    float: left;
+    width: 50%;
+    margin-right: 2%;
+    padding: 10px;
+}
+
+.one_line > h2 {
+    float: left;
+    width: auto;
+    margin-right: 2%;
+    padding: 10px;
+}
+
+.one_line > form {
+    float: left;
+    width: 70%;
+    margin-right: 2%;
+    /* padding: 10px; */
+}
+
+.one_line > div {
+    float: left;
+    width: 70%;
+    margin-right: 2%;
+    padding: 10px;
+}
+
+input.button_1{
+  width: 20%;
+  height: auto;
+}
+
+input.button_2{
+  width: 20%;
+  height: auto;
+}
+
+.invisible {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+}
+
+.visible {
+    visibility: visible;
+    position: static;
+}

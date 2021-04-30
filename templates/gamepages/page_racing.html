@@ -1,0 +1,35 @@
+{% extends "fullPattern.html" %}
+{% load static %}
+<div id="content">
+    {% block content %}
+      <div class="font-size">
+    <div class="container">
+        <div class="game_content">
+          <h1>2048</h1>
+          <label id="image">     
+                <img src="{% static "images/2048.png"%}" width=50% height=50%>
+          </label>
+
+          <label id="video">
+            <br>
+            <video src="{% static "video/2048.mp4"%}" controls width="70%"> Видео не найдено
+            </video>
+            
+          </label>
+
+          <label id="description">
+            <br>
+            <span>Просто проведите пальцем по экрану, чтобы переместить плитки. Когда две плитки с одинаковым номером соприкасаются, они сливаются в одну. Достигните плитки 2048 и продолжайте играть, чтобы разблокировать плитки с более высокими числами!
+          </label>
+           <label id="hmm">
+           </label>  
+          <br>
+          <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Играть">	
+          </form>
+        </div>
+      </div>
+  </div>
+     {% endblock %}
+<div>

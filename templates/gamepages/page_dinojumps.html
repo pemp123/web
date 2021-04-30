@@ -1,0 +1,35 @@
+{% extends "fullPattern.html" %}
+{% load static %}
+<div id="content">
+    {% block content %}
+      <div class="font-size">
+    <div class="container">
+        <div class="game_content">
+          <h1>Dino jumps</h1>
+          <label id="image">     
+                <img src="{% static "images/dinojumps.png"%}" width=60% height=60%>
+          </label>
+
+          <label id="video">
+            <br>
+            <video src="{% static "video/dinojumps.mp4"%}" controls width="70%"> Видео не найдено
+            </video>
+            
+          </label>
+
+          <label id="description">
+            <br>
+            <span>Dino из оффлайн-игры в браузере, забавная пасхалка.Очень просто, супервесело.Просто наслаждайтесь Хромозавром Рексом ;)
+          </label>
+           <label id="hmm">
+           </label>  
+          <br>
+          <form action="2048" method="post">
+            {% csrf_token %}
+          <input type="submit" value="Играть">	
+          </form>
+        </div>
+      </div>
+  </div>
+     {% endblock %}
+<div>
