@@ -19,21 +19,21 @@
       <div id="e-mail">  
         <div class="e-mail one_line">
           <h2>Почта: </h2>
-          <form id="ch_e-mail_form" class="one_line invisible" action="" method="POST">
+          <form id="ch_e-mail_form" name="ch_e-mail" class="one_line invisible" action="" method="POST">
             {% csrf_token %}
             {{ form.email}}
             <input class="button_1" name="ch_e-mail" type="button" id="change_e-mail" value="сохранить">
             <input class="button_2" type="button" id="canel_change_e-mail" value="отмена">
           </form>
           <div id="e-mail_show" class="real_e-mail one_line visible">
-            <h2>{{user.email}}</h2>
+            <h2 id="user_e-mail">{{user.email}}</h2>
             <input class="button_2" type="button" id="start_change_e-mail" value="изменить">
           </div>
         </div>
       </div>
-      <div id="password">
+      <!-- <div id="password">
         <input class="button_2" type="button" id="change_pass" value="сменить пароль">
-      </div>
+      </div> -->
     </div>
     <!-- <h1>Hello, {{user}}</h1>
       {% if user.profile.check_phone %}

@@ -5,7 +5,18 @@ from django.views.decorators.csrf import csrf_exempt
 from .forms import UserForm
 from .forms import LoginForm,Email_change
 from .forms import Phone
-from .models import Profile
+from .models import Profile,Competition_pull2
+from django.template import RequestContext
+from collections import defaultdict
+import weakref
+from channels.generic.websocket import AsyncJsonWebsocketConsumer
+from .consumers import Competition_pull, Competition_pull_snake, Competition_pull_2048
+
+
+def one_time_startup():
+  
+  #Competition_pull = Competition_pull2.objects.create()
+  print(Competition_pull)
 
 def index(request):
   return render(request,'index.html')
@@ -79,13 +90,26 @@ def profile(request):
   # form = Phone()
   # return render(request,'profile.html', {'form': form})
   
-# def change_pass(request):
-#   if request.method == 'POST':
-#     return HttpResponse("ты")
-#   return HttpResponse("ты папу мав")
+def change_pass(request):
+  return HttpResponse("ты папу мав")
 
 def change_email(request):
-  return HttpResponse("ты папу мав")
+  if request.method == 'POST':
+    form = Email_change(request.POST)
+    if form.is_valid():
+      if request.headers.get('id') == 'ch_e-mail':
+        form = Email_change(request.POST)
+        if form.is_valid():
+          if request.user.is_authenticated:
+            #competition_pull = Competition_pull.objects.create()
+            #competition_pull.members.add(request.user)
+            request.user.email = form.cleaned_data['email']
+            request.user.save()
+  return HttpResponse(request.user.email)
+
+def competitive(request):
+
+  return render(request,'competitive.html')
 
 def page_2048(request):
   return render(request,'gamepages/page_2048.html')
@@ -131,3 +155,58 @@ def shooter(request):
 
 def rating(request):
   return render(request,'rating.html')
+
+def search(list, platform):
+  for i in range(len(list)):
+   if list[i].user_id == platform:
+     return True
+  return False
+
+
+# def pool(request):
+#   test_1 = Competition_pull2.objects.all()
+#   Competition_pull.players[0]=""
+#   for id in test_1:
+#     id.members.add(request.user)
+#     if 0 in Competition_pull.players:
+#       tt = id.members.all()
+#   return render(request,'pool.html',context={"profils": tt})
+
+def tetris_pool(request):
+  tt = 0;
+  if((len(Competition_pull.players) < 2) or (request.user.id in Competition_pull.players)):
+    Competition_pull.players[request.user.id] = ""
+    if request.user.id in Competition_pull.players:
+      tt = Competition_pull.players
+    return render(request,'tetris_pool.html',context={"profils": tt.keys()})
+  return render(request,'tetris_pool.html',context={"profils": tt})
+
+def snake_pool(request):
+  flag = 0
+  print(len(Competition_pull_snake.players))
+  print(Competition_pull_snake.players)
+  if((len(Competition_pull_snake.players) < 2) or (request.user.id in Competition_pull_snake.players)):
+    Competition_pull_snake.players[request.user.id] = ""
+    flag=1
+  return render(request,'snake_pool.html',context={"flag": flag})
+
+def g2048_pool(request):
+  flag = 0
+  if((len(Competition_pull_2048.players) < 2) or (request.user.id in Competition_pull_2048.players)):
+    Competition_pull_2048.players[request.user.id] = ""
+    flag=1
+  return render(request,'g2048_pool.html',context={"flag": flag})
+
+# def test(request):
+#   Competition_pull_snake.players.clear()
+#   print(len(Competition_pull_snake.players))
+#   return HttpResponse(0)
+  # temp = 1
+  # Competition_pull.players[request.user.id] = request.body
+  # player_finder = Competition_pull.players.keys()
+  # for i in player_finder:
+  #   if(request.user.id != i):
+  #     temp = Competition_pull.players[i]
+  # return HttpResponse(temp)
+  
+

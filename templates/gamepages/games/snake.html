@@ -1,5 +1,10 @@
 {% extends "fullPattern.html" %}
+{%load static%}
 <div id="content">
     {% block content %}
+    <div class="snake_game">
+    <canvas id="snake" width="608" height="608"></canvas>
+    </div>
+    <script src="{% static 'scripts/gamescripts/snake.js' %}"></script>
      {% endblock %}
 <div>

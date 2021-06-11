@@ -1,0 +1,21 @@
+{% extends "fullPattern.html" %}
+{%load static%}
+<div id="content">
+    {% block content %}
+    {% if flag == 1 %}
+	<div id="player1" class="player1">
+      <canvas id="score_g2048"></canvas>
+      <canvas id="g2048" ></canvas>   
+	</div>
+  <div id="player2" class="player2">
+    <canvas id="score_g20482"></canvas>
+    <canvas id="g20482" ></canvas>
+  </div>
+  <script type="text/javascript" src="{% static 'scripts/gamescripts/assets.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/gamescripts/plugins.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/gamescripts/g20482.js' %}"></script>
+    {%else%}
+      <h1 id="extens_error"> Пул переполнен</h1>
+    {% endif %}
+  {% endblock %}
+<div>

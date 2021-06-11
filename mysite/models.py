@@ -20,3 +20,8 @@ class Profile(models.Model):
     
     def set_phone(self):
       self.phone = "1111"
+
+class Competition_pull2(models.Model):
+  members = models.ManyToManyField(User, verbose_name="prticipant2")
+  pull_id = models.PositiveIntegerField(default=11, verbose_name='prticipant11')
+  data = models.JSONField(default=dict)

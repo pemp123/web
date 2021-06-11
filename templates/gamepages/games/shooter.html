@@ -1,5 +1,8 @@
 {% extends "fullPattern.html" %}
+{%load static%}
 <div id="content">
     {% block content %}
+        <canvas width="320" height="640" id="shooter"></canvas>
+    <script src="{% static 'scripts/gamescripts/shooter.js' %}"></script>
      {% endblock %}
 <div>

@@ -45,6 +45,12 @@ urlpatterns = [
     path('racing',views.racing, name='racing'),
     path('rating',views.rating, name='rating'),
     #path('change_pass',views.change_pass, name='change_pass'),
-    #path('change_email',views.change_email, name='change_email'),
-    
+    path('change_email',views.change_email, name='change_email'),
+    path('competitive',views.competitive, name='competitive'),
+    path('tetris_pool',views.tetris_pool, name='tetris_pool'),
+    path('snake_pool',views.snake_pool, name='snake_pool'),
+    path('g2048_pool',views.g2048_pool, name='g2048_pool'),
+    #path('test',views.test, name='test'),
 ]
+
+views.one_time_startup()

@@ -1,5 +1,13 @@
 {% extends "fullPattern.html" %}
+{%load static%}
 <div id="content">
     {% block content %}
-     {% endblock %}
+	<div id="body">
+    <canvas id="score_g2048_solo"></canvas>
+    <canvas id="g2048_solo" ></canvas>
+		<script type="text/javascript" src="{% static 'scripts/gamescripts/assets.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/gamescripts/plugins.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/gamescripts/g2048.js' %}"></script>
+	</div>
+  {% endblock %}
 <div>

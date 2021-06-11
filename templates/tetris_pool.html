@@ -1,0 +1,30 @@
+ {% extends "fullPattern.html" %}
+ {% load static %}
+ 
+  <div id="content">
+    {% block content %}
+    {% if profils != 0 %}
+  <div id="csrf_token">{% csrf_token %}</div>
+  <div id = "pool_container">
+    <input type="button" onclick="requestAnimationFrame(startGame())" class ="play_tetris" value="Играть">
+    <div class="score_text">Score:</div> 
+    <h2 id="score1"></h2>
+    <div class="canvas_name">
+      Вы: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Оппонент:
+    </div> 
+    <canvas width="320" height="640" id="tetris2"></canvas>
+    <canvas width="320" height="640" id="tetris1"></canvas>
+    
+    {% for lan in profils %}
+    <h2 id="costil">{{lan}}</h2>
+    {% endfor %}
+    
+  </div>
+  {% else %}
+  <h1 id="extens_error"> Пул переполнен</h1>
+  {% endif %}
+      <script src="{% static 'scripts/gamescripts/tetris2.js' %}"></script>
+      {% endblock %}
+  </div>
+  

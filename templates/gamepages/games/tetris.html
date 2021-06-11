@@ -1,6 +1,12 @@
 {% extends "fullPattern.html" %}
+{%load static%}
 <div id="content">
     {% block content %}
-    
+    <input type="button" onclick="requestAnimationFrame(startGame())" class ="play_tetris" value="Играть">
+    <div class="score_text">Score:</div> 
+    <h2 id="score"></h2>
+    <canvas width="320" height="640" id="tetris"></canvas>
+    <script src="{% static 'scripts/gamescripts/tetris.js' %}"></script>
      {% endblock %}
-<div>
+<div><!DOCTYPE html>
+<html>

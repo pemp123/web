@@ -1,0 +1,17 @@
+{% extends "fullPattern.html" %}
+ {% load static %}
+  <div id="content">
+    {% block content %}
+    {% if flag == 1 %}
+    <div class="snake_game1">
+      <canvas id="snake1" width="608" height="608"></canvas>
+    </div>
+    <div class="snake_game2">
+      <canvas id="snake2" width="608" height="608"></canvas>
+    </div>
+    <script src="{% static 'scripts/gamescripts/snake2.js' %}"></script>
+    {%else%}
+      <h1 id="extens_error"> Пул переполнен</h1>
+    {% endif %}
+    {% endblock %}
+  </div>

@@ -32,19 +32,28 @@ async function change_pass()
 
 async function change_email()
 {
-  alert("ddd");
+  let name = this.parentNode.getAttribute("name")
   let url = "change_email";
   let blob = await new FormData(this.parentNode)
   let response = await fetch(url,
   {
     method: 'POST',
+    headers: {
+    id: name
+    },
     body: blob
+    
   });
 
   if (response.ok) { // если HTTP-статус в диапазоне 200-299
     // получаем тело ответа (см. про этот метод ниже)
     let json = await response.text();
-    alert(json);
+    document.getElementById("user_e-mail").innerHTML = json;
+    this.parentNode.classList.remove("visible");
+    this.parentNode.classList.add("invisible");
+    var temp = document.querySelector('div[id="e-mail_show"]');
+    temp.classList.remove("invisible");
+    temp.classList.add("visible");
   } else {
     alert("Ошибка HTTP: " + response.status);
   }
